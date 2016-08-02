@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>返回顶部的小demo</title>
+  <style>
+    #content{
+      width:80vw;
+      height:1000px;
+      border:1px solid #ccc;
+      margin:0 auto;
+    }
+    .rwbtn{
+      text-decoration:none;
+      border:1px solid #E13639;
+      padding:6px;
+      background-color:#E13639;
+      color:#fff;
+      border-radius:3px;
+      text-align:justify;
+      writing-mode:tb-rl;
+      position:relative;
+      top:922px;
+      left:100%;
+}
+  </style>
+</head>
+<body>
+<div id="content">
+  <a href="">返回顶部</a>
+</div>
+  <script>
+    $(function() {
+      $("a").addClass("rwbtn");
+
+      $("a").on("click", function(e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop: 0}, 500);
+      });
+    });
+  </script>
+</body>
+</html>
