@@ -1,77 +1,78 @@
-/*// 1.对象模块
+	// 1.对象模块
     var searchObj = {};
     searchObj.init = function() {
-      searchObj.fn1();
-      searchObj.fn2();
+        searchObj.fn1();
+        searchObj.fn2();
     };
     searchObj.fn1 = function() {
-      alert('fn1');
+        alert('fn1');
     };
     searchObj.fn2 = function() {
-      alert('fn2');
+        alert('fn2');
     };
     searchObj.init();
 
-  // 2.原型模块
+  	
+	// 2.原型模块
     function searchObj() {
-      this.init();
+        this.init();
     }
 
     searchObj.prototype.init = function() {
       // console.info(this);
-      this.fn1();
-      this.fn2();
+        this.fn1();
+        this.fn2();
     };
 
     searchObj.prototype.fn1 = function() {
-      alert(1);
+        alert(1);
     };
     searchObj.prototype.fn2 = function() {
-      alert(2);
+        alert(2);
     };
     new searchObj(); 
 
     // 3.以对象模块返回（模块暴露）
     function CoolModule() {
-      var something = "cool";
-      var another = [1, 2, 3];
+        var something = "cool";
+        var another = [1, 2, 3];
 
-      function doSomething() {
-        console.log(something);
-      }
-      function doAnother() {
-        console.log(another.join(" ! "));
-      }
+        function doSomething() {
+            console.log(something);
+        }
+        function doAnother() {
+            console.log(another.join(" ! "));
+        }
 
-      return {
-        doSomething: doSomething,
-        doAnother: doAnother
-      };
+        return {
+            doSomething: doSomething,
+            doAnother: doAnother
+        };
     }
 
     var foo = CoolModule();
     foo.doSomething();
     foo.doAnother();
+	// 
     // 上面的代码有一个叫做coolModule()的独立的模块创建器，可以被
     // 调用任意多次，每次调用都会创建一个新的模块实例。当只需要一个实例
     // 时，对该模式进行简单得修改，实现单例模式。
     //
-    //
-    var foo = (    function CoolModule() {
-      var something = "cool";
-      var another = [1, 2, 3];
+    var foo = (function CoolModule() {
+        var something = "cool";
+        var another = [1, 2, 3];
 
-      function doSomething() {
-        console.log(something);
-      }
-      function doAnother() {
-        console.log(another.join(" ! "));
-      }
+        function doSomething() {
+            console.log(something);
+        }
+        function doAnother() {
+            console.log(another.join(" ! "));
+        }
 
-      return {
-        doSomething: doSomething,
-        doAnother: doAnother
-      };
+        return {
+            doSomething: doSomething,
+            doAnother: doAnother
+        };
     }());
     foo.doSomething();
     foo.doAnother();*/
